@@ -10,8 +10,8 @@ const Navbar = () => {
 
     <div className='Contain_Navbar'>
       <ul className='Containt_Navbar_item'>
-      <Link to = '/HomePage'> Home</Link>
-      <Link to = '/Product'>Productos</Link>
+      <Link to = '/'> Home</Link>
+      <Link to = '/Productos'>Productos</Link>
       <Link to = '/Cart'>Cart</Link>
       <Link to = '/Purchases'>Purchases</Link>
       </ul>

@@ -7,6 +7,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import ProductId from './pages/ProductId'
 import Purchases from './pages/Purchases'
+import Product from './pages/Product'
+import Cart from './pages/Cart'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
         <Route path='/' element={<HomePage/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/Productos' element={<Product/>}/>
+        <Route path='/Cart' element={<Cart/>}/>
         <Route path='/product/:id' element={<ProductId/>}/>
         <Route path='/purchases' element={<Purchases/>}/>
       </Routes>
