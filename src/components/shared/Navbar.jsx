@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import '../../Styles/Navbar.css';
 
 
@@ -8,14 +8,66 @@ import '../../Styles/Navbar.css';
 const Navbar = () => {
   return (
 
-    <div className='Contain_Navbar'>
-      <ul className='Containt_Navbar_item'>
-      <Link to = '/'> Home</Link>
-      <Link to = '/Productos'>Productos</Link>
-      <Link to = '/Cart'>Cart</Link>
-      <Link to = '/Purchases'>Purchases</Link>
+
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container-fluid">
+
+ 
+    <div className="collapse navbar-collapse" id="navbarNav">
+   
+   
+      <ul className="navbar-nav">
+      
+
+     <NavLink
+
+           className={({isActive}) => `nav-link ${isActive ? 'active':'disable'}`}
+          to={"/"}>
+            Home
+
+     </NavLink>
+     
+
+     <NavLink
+
+           className={({isActive}) => `nav-link ${isActive ? 'active':'disable'}`}
+          to={"/login"}>
+            Login
+
+     </NavLink>
+
+     <NavLink
+
+           className={({isActive}) => `nav-link ${isActive ? 'active':'disable'}`}
+          to={"/register"}>
+            Count
+
+     </NavLink>
+
+          <NavLink
+
+                  className={({isActive}) => `nav-link ${isActive ? 'active':'disable'}`}
+                  to={"/purchases"}>
+                    Purchases
+
+          </NavLink>
+
+
+            <NavLink
+
+                    className={({isActive}) => `nav-link ${isActive ? 'active':'disable'}`}
+                    to={"/Cart"}>
+                      Cart
+
+              </NavLink>
+
       </ul>
     </div>
+  </div>
+</nav>
+
+
+    
 
   )
 }
