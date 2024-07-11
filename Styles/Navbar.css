@@ -1,0 +1,10 @@
+.Contain_Navbar{
+    
+}
+.Containt_Navbar_item{
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-right: 15px;
+    border: 1px; 
+}
