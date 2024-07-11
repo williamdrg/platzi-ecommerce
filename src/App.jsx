@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div>
-      <h1>hola mundo 2</h1>
+      <h1>hola mundo</h1>
     </div>
   )
 }
