@@ -1,5 +1,5 @@
 import axios from "axios"
-const urlBase = 'https://fakestoreapi.com'
+import urlBase from "../utils/urlBase"
 
 const useAuth = (path, data) => {
   const url = `${urlBase}${path}`

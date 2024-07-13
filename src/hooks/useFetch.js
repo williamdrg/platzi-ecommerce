@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import urlBase from "../utils/urlBase";
 
-const urlBase = 'https://fakestoreapi.com';
 const useFetch = () => {
   const [ apiData, setapiData ] = useState();
 
