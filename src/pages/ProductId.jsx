@@ -26,34 +26,34 @@ const ProductId = () => {
     return setCounter(counter + 1)
   }
 
-  console.log(product)
+  // console.log(product)
 
   return (
     <div className='productid'>
-      <div>
+      <div className='productid__picture'>
+        <span>{product?.category}</span>
         <figure>
           <img src={product?.image} alt={product?.title} className='productid__img' />
         </figure>
-        <span>{product?.category}</span>
       </div>
-      <div>
+      <div className='productid__info'>
         <h1>{product?.title}</h1>
         <p>{product?.description}</p>
-      </div>
-      <div>
-        <span>Price</span>
-        <span>{product?.price}</span>
-      </div>
-      <div>
-        <span>Quantity</span>
-        <button onClick={handleLess}>-</button>
-        <span>
-          {counter}
-        </span>
-        <button onClick={handlePlus}>+</button>
-      </div>
-      <div>
-        {/* Addition button buy */}
+        <div>
+          <span>Price</span>
+          <span>{product?.price}</span>
+          <div>
+            <span>Quantity</span>
+            <button onClick={handleLess}>-</button>
+            <span>
+              {counter}
+            </span>
+            <button onClick={handlePlus}>+</button>
+          </div>
+          <div>
+            {/* Addition button buy */}
+          </div>
+        </div>
       </div>
     </div>
   )
