@@ -16,6 +16,16 @@ const ProductId = () => {
     getProduct(path)
   }, []);
 
+  const handleLess = () => {
+    if (counter > 1) {
+      return setCounter(counter - 1)
+    }
+  }
+
+  const handlePlus = () => {
+    return setCounter(counter + 1)
+  }
+
   console.log(product)
 
   return (
@@ -36,11 +46,11 @@ const ProductId = () => {
       </div>
       <div>
         <span>Quantity</span>
-        <button>-</button>
+        <button onClick={handleLess}>-</button>
         <span>
           {counter}
         </span>
-        <button>+</button>
+        <button onClick={handlePlus}>+</button>
       </div>
       <div>
         {/* Addition button buy */}
