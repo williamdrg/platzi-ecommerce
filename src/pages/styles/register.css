@@ -1,0 +1,10 @@
+.register__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+.register__name {
+  display: flex;
+  flex-direction: column;
+}
