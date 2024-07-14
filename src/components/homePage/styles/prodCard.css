@@ -1,0 +1,25 @@
+.prodcard {
+    padding: 20px;
+}
+
+.prodcard__container{
+    width: 250px;
+    height: 420px;
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.prodcard__img {
+    width: 90%;
+    height: 200px
+}
+
+.prodcard__img img {
+    width: 100%;
+    height: 100%;
+}
