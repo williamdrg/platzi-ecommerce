@@ -68,3 +68,16 @@
 .productid__btn {
     padding: 5px 10px;
 }
+
+@media (min-width: 640px) {
+    .productid {
+        flex-direction: row;
+    }
+    .productid__info {
+        padding-top: 50px;
+        padding-right: 50px;
+    }
+    .productid__title {
+        border-top: none;
+    }
+}
