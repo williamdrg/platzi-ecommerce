@@ -1,23 +1,24 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import useFetch from "../../hooks/useFetch";
+import './styles/filterSelect.css'
 
 const FilterSelect = ({ setCategoryValue }) => {
   const [categories, getCategories] = useFetch();
 
   useEffect(() => {
     getCategories("/products/categories");
-  }, []);
+  }, [getCategories]);
 
   const itemSelect = useRef();
-  const handleChange = () => {
+  const handleChange = useCallback(() => {
     setCategoryValue(itemSelect.current.value);
-  };
+  }, [setCategoryValue]);
 
   // console.log(categories);
 
   return (
-    <select ref={itemSelect} onChange={handleChange}>
-      <option value=""> All products</option>
+    <select className="category__container" ref={itemSelect} onChange={handleChange}>
+      <option value="">All products</option>
       {categories?.map((category) => (
         <option key={category} value={category}>
           {category}

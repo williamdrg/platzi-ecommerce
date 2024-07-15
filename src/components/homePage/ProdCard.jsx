@@ -1,4 +1,4 @@
-import React from "react";
+
 import "./styles/prodCard.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const ProdCard = ({ prod }) => {
   console.log(prod);
 
   return (
-    <dir onClick={handleDetail} className="prodcard">
+    <div onClick={handleDetail} className="prodcard" role="button" tabIndex={0}>
       <div className="prodcard__container">
         <figure className="prodcard__img">
           <img src={prod.image} alt="product image" />
@@ -22,7 +22,7 @@ const ProdCard = ({ prod }) => {
           <div className="prodcard__category">{prod.category}</div>
         </div>
       </div>
-    </dir>
+    </div>
   );
 };
 

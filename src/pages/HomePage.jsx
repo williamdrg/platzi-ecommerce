@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsThunk } from "../store/slices/products.slice";
 import ProdCard from "../components/homePage/ProdCard";
@@ -6,20 +6,21 @@ import "./styles/homePage.css";
 import FilterSelect from "../components/homePage/FilterSelect";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
   const products = useSelector((store) => store.products);
   const [categoryValue, setCategoryValue] = useState("");
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProductsThunk());
-  }, []);
+  }, [dispatch]);
 
-  const cbFilter = (prod) => {
-    const categoryFilter =
-      categoryValue === "" ? true : prod.category === categoryValue;
-    return categoryFilter;
-  };
-  // console.log(products)
+  const filteredProducts = useMemo(() => {
+    return products.filter(prod => 
+      categoryValue === "" ? true : prod.category === categoryValue
+    );
+  }, [products, categoryValue]);
+
+  console.log(products)
 
   return (
     <div className="homepage">
@@ -28,7 +29,7 @@ const HomePage = () => {
       </div>
       <div className="homepage__search"></div>
       <div className="homepage__container">
-        {products?.filter(cbFilter).map((prod) => (
+        {filteredProducts?.map((prod) => (
           <ProdCard key={prod.id} prod={prod} />
         ))}
       </div>
