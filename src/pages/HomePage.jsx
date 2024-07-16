@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsThunk } from "../store/slices/products.slice";
 import ProdCard from "../components/homePage/ProdCard";
-import "./styles/homePage.css";
 import FilterSelect from "../components/homePage/FilterSelect";
 import FilterPrice from "../components/homePage/FilterPrice";
+import "./styles/homePage.css";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -37,11 +37,9 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <div className="homepage__filter">
-        <FilterPrice setInputPrice={setInputPrice}/>
-      </div>
-      <div className="homepage__search">
         <input ref={textInput} onChange={handleChange} type="text" />
         <FilterSelect setCategoryValue={setCategoryValue} />
+        <FilterPrice setInputPrice={setInputPrice}/>
       </div>
       <div className="homepage__container">
         {products?.filter(cbFilter).map((prod) => (
