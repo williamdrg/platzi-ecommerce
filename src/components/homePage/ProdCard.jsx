@@ -17,9 +17,11 @@ const ProdCard = ({ prod }) => {
           <img src={prod.image} alt="product image" />
         </figure>
         <div className="prodcard__data">
-          <div className="prodcard__price">{prod.price}</div>
+          <div className="prodcard__price">$ {prod.price}</div>
           <div className="prodcard__title">{prod.title}</div>
-          <div className="prodcard__category">{prod.category}</div>
+        </div>
+        <div className="prodcard__button">
+          <button>Agregar #</button>
         </div>
       </div>
     </dir>
