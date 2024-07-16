@@ -8,7 +8,7 @@ const ProdCard = ({ prod }) => {
   const handleDetail = () => {
     navigate(`product/${prod.id}`);
   };
-  console.log(prod);
+  //console.log(prod);
 
   return (
     <dir onClick={handleDetail} className="prodcard">
