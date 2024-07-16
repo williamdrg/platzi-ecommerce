@@ -44,7 +44,7 @@ const HomePage = () => {
         <FilterSelect setCategoryValue={setCategoryValue} />
       </div>
       <div className="homepage__container">
-        {filteredProducts?.map((prod) => (
+        {products?.filter(cbFilter).map((prod) => (
           <ProdCard key={prod.id} prod={prod} />
         ))}
       </div>
