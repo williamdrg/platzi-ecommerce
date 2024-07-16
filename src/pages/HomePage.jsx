@@ -7,6 +7,7 @@ import FilterSelect from "../components/homePage/FilterSelect";
 import FilterPrice from "../components/homePage/FilterPrice";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
   const products = useSelector((store) => store.products);
   const [categoryValue, setCategoryValue] = useState("");
   const [inputValue, setInputValue] = useState("");
@@ -14,14 +15,12 @@ const HomePage = () => {
     min: 0,
     max: Infinity,
   })
-  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getProductsThunk());
   }, []);
   
   const textInput = useRef();
- 
   const handleChange = () => {
     setInputValue(textInput.current.value.trim().toLowerCase());
   } 
@@ -33,7 +32,7 @@ const HomePage = () => {
     categoryValue === "" ? true : prod.category === categoryValue;
     return  nameFilter && priceFilter && categoryFilter;
   };
-   console.log(products)
+    console.log(products)
   
   return (
     <div className="homepage">
@@ -45,7 +44,7 @@ const HomePage = () => {
         <FilterSelect setCategoryValue={setCategoryValue} />
       </div>
       <div className="homepage__container">
-        {products?.filter(cbFilter).map((prod) => (
+        {filteredProducts?.map((prod) => (
           <ProdCard key={prod.id} prod={prod} />
         ))}
       </div>

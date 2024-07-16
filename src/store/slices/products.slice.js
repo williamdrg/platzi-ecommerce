@@ -4,9 +4,9 @@ import urlBase from "../../utils/urlBase";
 
 const products = createSlice({
     name: 'products',
-    initialState: null,
+    initialState: [],
     reducers: {
-        setProducts: (_state, {payload}) => payload
+        setProducts: (_state, { payload }) => payload
     }
 })
 
