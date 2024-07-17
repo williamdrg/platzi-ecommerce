@@ -8,7 +8,7 @@ const FilterPrice = ({setInputPrice}) => {
   const submit = (data) => {
     setInputPrice({
         min: data.min,
-        max: data.max
+        max: data.max || Infinity
     })
   }
 
