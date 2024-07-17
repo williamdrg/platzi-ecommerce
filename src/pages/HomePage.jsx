@@ -28,9 +28,9 @@ const HomePage = () => {
   const cbFilter = (prod) => {
     const nameFilter = prod.title.toLowerCase().includes(inputValue);
     const priceFilter = Number(prod.price) <= Number(inputPrice.max) && Number(prod.price) >= Number(inputPrice.min);
-    // const categoryFilter =
-    // categoryValue === "" ? true : prod.category === categoryValue;
-    return  nameFilter && priceFilter;
+    const categoryFilter =
+    categoryValue === "" ? true : prod.category === categoryValue;
+    return  nameFilter && priceFilter && categoryFilter;
   };
     console.log(products)
   
